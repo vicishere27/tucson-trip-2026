@@ -103,6 +103,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue','Noto Sans TC
 .rt-th{background:#FAEEDA;color:#854F0B}.rt-vn{background:#EAF3DE;color:#3B6D11}.rt-jp{background:#E1F5EE;color:#0F6E56}.rt-tw{background:#FAECE7;color:#993C1D}.rt-cn{background:#EEEDFE;color:#3C3489}.rt-pa{background:#F1EFE8;color:#5F5E5A}
 .rc-dist{font-size:11px;color:#B4B2A9;margin-bottom:3px}
 .rc-dishes{font-size:11px;color:#C45B1A;line-height:1.6}
+.rc-name a{color:#2C2C2A;text-decoration:none;display:flex;align-items:center;gap:4px}
+.rc-name a::after{content:'📍';font-size:10px;opacity:0.6;flex-shrink:0}
+.map-btn{display:inline-flex;align-items:center;gap:3px;color:#C45B1A;text-decoration:none;font-size:11px;font-weight:500;padding:3px 9px;background:#FDF0E0;border-radius:6px;border:1px solid rgba(196,91,26,0.22);margin-top:5px;min-height:26px;white-space:nowrap}
+.tl-name a{color:#2C2C2A;text-decoration:none}
+.tl-name a:hover{color:#C45B1A}
 
 /* PACKING */
 .pack-progress{background:#EDD9BC;border-radius:6px;overflow:hidden;height:6px;margin-bottom:5px}
@@ -281,7 +286,7 @@ footer strong{color:#C45B1A}
       <div class="tl-dot dot-m"></div>
       <div class="tl-card">
         <div class="tl-top"><span class="tl-time">17:30–19:30</span><div class="bds"><span class="bd bd-m">晚餐</span><span class="bd bd-a">Junior Chefs</span></div></div>
-        <div class="tl-name">🍽️ Desert Farmer（度假村內）</div>
+        <div class="tl-name">🍽️ <a href="https://maps.google.com/?q=Desert+Farmer+Omni+Tucson+National+Resort" target="_blank" rel="noopener">Desert Farmer（度假村內）</a></div>
         <div class="tl-meta"><span class="tl-loc">📍 步行可達</span><span class="tl-cost">$150–250 → 折抵後約 $50–150 · CSR 卡</span></div>
         <div class="tl-note">Junior Chefs 兒童餐優惠，19:30 前結束配合幼兒作息。<br>💰 <span class="hl">The Edit $100 度假村額度</span>可用於此餐，建議在這餐使用，直接折抵帳單，確認時告知是 The Edit 訂房。</div>
       </div>
@@ -300,7 +305,7 @@ footer strong{color:#C45B1A}
       <div class="tl-dot dot-m"></div>
       <div class="tl-card">
         <div class="tl-top"><span class="tl-time">08:00–08:45</span><div class="bds"><span class="bd bd-m">早餐</span><span class="bd bd-f">The Edit 免費</span></div></div>
-        <div class="tl-name">🍳 The Edit 每日早餐（2 大人免費）</div>
+        <div class="tl-name">🍳 <a href="https://maps.google.com/?q=Omni+Tucson+National+Resort" target="_blank" rel="noopener">The Edit 每日早餐（2 大人免費）</a></div>
         <div class="tl-meta"><span class="tl-loc">📍 Omni 餐廳</span><span class="tl-cost">大人 $0（The Edit）· 小孩 Junior Chefs 優惠</span></div>
         <div class="tl-note"><span class="hl">The Edit 福利</span>：2 大人早餐全免，坐式或自助視 Omni 安排。出發博物館前先用早餐，確保幼兒飽足。</div>
       </div>
@@ -309,7 +314,7 @@ footer strong{color:#C45B1A}
       <div class="tl-dot dot-a"></div>
       <div class="tl-card">
         <div class="tl-top"><span class="tl-time">09:00–11:30</span><div class="bds"><span class="bd bd-a">室內冷氣</span></div></div>
-        <div class="tl-name">🏛️ Children's Museum Tucson</div>
+        <div class="tl-name">🏛️ <a href="https://maps.google.com/?q=Children%27s+Museum+Tucson+AZ" target="_blank" rel="noopener">Children's Museum Tucson</a></div>
         <div class="tl-meta"><span class="tl-loc">📍 自駕約 35 分</span><span class="tl-cost">$40–60</span></div>
         <div class="tl-note">全室內冷氣互動設施，<span class="hl">背巾</span>方便移動。建議開門即到。</div>
         <div class="gear-row"><span class="gtag">🎒 背巾</span></div>
@@ -319,7 +324,7 @@ footer strong{color:#C45B1A}
       <div class="tl-dot dot-m"></div>
       <div class="tl-card">
         <div class="tl-top"><span class="tl-time">12:00–13:30</span><div class="bds"><span class="bd bd-m">午餐</span></div></div>
-        <div class="tl-name">🍜 Noodleholics（台灣/中式）</div>
+        <div class="tl-name">🍜 <a href="https://maps.google.com/?q=3502+E+Grant+Rd+Tucson+AZ+85716" target="_blank" rel="noopener">Noodleholics（台灣/中式）</a></div>
         <div class="tl-meta"><span class="tl-cost">$80–120 · CSR 卡</span></div>
         <div class="tl-note">上菜快速。餐後返回度假村午睡。</div>
       </div>
@@ -336,7 +341,7 @@ footer strong{color:#C45B1A}
       <div class="tl-dot dot-w"></div>
       <div class="tl-card">
         <div class="tl-top"><span class="tl-time">15:00–17:00</span><div class="bds"><span class="bd bd-w">玩水</span><span class="bd bd-a">備案室內</span></div></div>
-        <div class="tl-name">💦 Catalina Park Splash Pad</div>
+        <div class="tl-name">💦 <a href="https://maps.google.com/?q=Catalina+Park+Splash+Pad+Tucson+AZ" target="_blank" rel="noopener">Catalina Park Splash Pad</a></div>
         <div class="tl-meta"><span class="tl-loc">📍 自駕 20–35 分</span><span class="tl-cost">免費</span></div>
         <div class="tl-note">地面噴水適合幼兒，有陰涼區。⚠️ 出發前確認開放時間。<br>備案：Pima Air &amp; Space Museum 室內。</div>
         <div class="gear-row"><span class="gtag">🎒 背巾</span><span class="gtag">📸 腳架</span><span class="gtag">🧊 保冰箱</span><span class="gtag">🩱 泳衣</span></div>
@@ -346,7 +351,7 @@ footer strong{color:#C45B1A}
       <div class="tl-dot dot-m"></div>
       <div class="tl-card">
         <div class="tl-top"><span class="tl-time">17:30–19:30</span><div class="bds"><span class="bd bd-m">晚餐</span></div></div>
-        <div class="tl-name">🍣 Ikkyu（日式）</div>
+        <div class="tl-name">🍣 <a href="https://maps.google.com/?q=2040+W+Orange+Grove+Rd+Tucson+AZ+85704" target="_blank" rel="noopener">Ikkyu（日式）</a></div>
         <div class="tl-meta"><span class="tl-cost">$120–180 · CSR 卡</span></div>
         <div class="tl-note">點餐快速，推薦 Sushi Rolls / Teriyaki。19:30 前結束。</div>
       </div>
@@ -365,7 +370,7 @@ footer strong{color:#C45B1A}
       <div class="tl-dot dot-w"></div>
       <div class="tl-card">
         <div class="tl-top"><span class="tl-time">09:00–10:30</span><div class="bds"><span class="bd bd-m">早餐</span><span class="bd bd-w">玩水</span><span class="bd bd-f">The Edit 免費</span></div></div>
-        <div class="tl-name">☀️ The Edit 早餐 ＋ 泳池最後衝刺</div>
+        <div class="tl-name">☀️ <a href="https://maps.google.com/?q=Omni+Tucson+National+Resort" target="_blank" rel="noopener">The Edit 早餐 ＋ 泳池最後衝刺</a></div>
         <div class="tl-meta"><span class="tl-loc">📍 Omni 內</span><span class="tl-cost">大人 $0（The Edit）· 小孩 Junior Chefs 約 $20–30</span></div>
         <div class="tl-note"><span class="hl">The Edit 福利</span>：第二天早餐 2 大人再度全免。早餐後最後一次泳池。<br>💡 <span class="hl">申請 Late Checkout</span>：The Edit 住客可向前台申請延遲退房（爭取到中午 12–1 PM），讓早上更從容。</div>
       </div>
@@ -382,7 +387,7 @@ footer strong{color:#C45B1A}
       <div class="tl-dot dot-m"></div>
       <div class="tl-card">
         <div class="tl-top"><span class="tl-time">11:00–12:30</span><div class="bds"><span class="bd bd-m">午餐</span></div></div>
-        <div class="tl-name">🍛 Kin Dee Thai 或 Ha Long Bay</div>
+        <div class="tl-name">🍛 <a href="https://maps.google.com/?q=Kin+Dee+Thai+Tucson+AZ" target="_blank" rel="noopener">Kin Dee Thai</a> 或 <a href="https://maps.google.com/?q=Ha+Long+Bay+Vietnamese+Tucson+AZ" target="_blank" rel="noopener">Ha Long Bay</a></div>
         <div class="tl-meta"><span class="tl-cost">$80–120 · CSR 卡</span></div>
         <div class="tl-note">泰式或越式，家庭友善。餐後車上幼兒小睡。</div>
       </div>
@@ -405,20 +410,20 @@ footer strong{color:#C45B1A}
 <div class="sec">🍽️ 備案餐廳</div>
 <p style="font-size:12px;color:#B4B2A9;margin-bottom:12px">距 Omni 20–40 分，使用 CSR 卡</p>
 <div class="rest-grid">
-  <div class="rc"><div class="rc-top"><span class="rc-name">Kin Dee Thai</span><span class="rc-type rt-th">泰</span></div><div class="rc-dist">25–35 分</div><div class="rc-dishes">Pad Thai · Green Curry · Tom Yum</div></div>
-  <div class="rc"><div class="rc-top"><span class="rc-name">Ha Long Bay</span><span class="rc-type rt-vn">越</span></div><div class="rc-dist">30–40 分</div><div class="rc-dishes">Pho · Spring Rolls · Vermicelli</div></div>
-  <div class="rc"><div class="rc-top"><span class="rc-name">Raijin Ramen</span><span class="rc-type rt-jp">日</span></div><div class="rc-dist">30 分</div><div class="rc-dishes">Tonkotsu · Miso · Gyoza</div></div>
-  <div class="rc"><div class="rc-top"><span class="rc-name">eHotPot / Tasty Pot</span><span class="rc-type rt-tw">台</span></div><div class="rc-dist">25–40 分</div><div class="rc-dishes">Beef Noodle · Mala Pot</div></div>
-  <div class="rc"><div class="rc-top"><span class="rc-name">Asian Spice / Chef Wang</span><span class="rc-type rt-cn">陸/台</span></div><div class="rc-dist">20–35 分</div><div class="rc-dishes">Ho Fun · Dumplings</div></div>
-  <div class="rc"><div class="rc-top"><span class="rc-name">P.F. Chang's</span><span class="rc-type rt-pa">泛亞</span></div><div class="rc-dist">20–30 分</div><div class="rc-dishes">Mongolian Beef · Wraps</div></div>
-  <div class="rc"><div class="rc-top"><span class="rc-name">Tuk Tuk Thai</span><span class="rc-type rt-th">泰</span></div><div class="rc-dist">30–40 分</div><div class="rc-dishes">Pad See Ew · Curry</div></div>
-  <div class="rc"><div class="rc-top"><span class="rc-name">Miss Saigon</span><span class="rc-type rt-vn">越</span></div><div class="rc-dist">25–40 分</div><div class="rc-dishes">Banh Mi · Summer Rolls</div></div>
-  <div class="rc"><div class="rc-top"><span class="rc-name">Jun Dynasty</span><span class="rc-type rt-cn">陸/台</span></div><div class="rc-dist">短程</div><div class="rc-dishes">熱炒 · Dumplings</div></div>
-  <div class="rc"><div class="rc-top"><span class="rc-name">Ikkyu（備案）</span><span class="rc-type rt-jp">日</span></div><div class="rc-dist">短程</div><div class="rc-dishes">Sushi · Teriyaki</div></div>
+  <div class="rc"><div class="rc-top"><span class="rc-name"><a href="https://maps.google.com/?q=Kin+Dee+Thai+Tucson+AZ" target="_blank" rel="noopener">Kin Dee Thai</a></span><span class="rc-type rt-th">泰</span></div><div class="rc-dist">25–35 分</div><div class="rc-dishes">Pad Thai · Green Curry · Tom Yum</div></div>
+  <div class="rc"><div class="rc-top"><span class="rc-name"><a href="https://maps.google.com/?q=Ha+Long+Bay+Vietnamese+Tucson+AZ" target="_blank" rel="noopener">Ha Long Bay</a></span><span class="rc-type rt-vn">越</span></div><div class="rc-dist">30–40 分</div><div class="rc-dishes">Pho · Spring Rolls · Vermicelli</div></div>
+  <div class="rc"><div class="rc-top"><span class="rc-name"><a href="https://maps.google.com/?q=2995+E+Speedway+Blvd+Tucson+AZ+85716" target="_blank" rel="noopener">Raijin Ramen</a></span><span class="rc-type rt-jp">日</span></div><div class="rc-dist">30 分</div><div class="rc-dishes">Tonkotsu · Miso · Gyoza</div></div>
+  <div class="rc"><div class="rc-top"><span class="rc-name"><a href="https://maps.google.com/?q=eHotPot+Tucson+AZ" target="_blank" rel="noopener">eHotPot / Tasty Pot</a></span><span class="rc-type rt-tw">台</span></div><div class="rc-dist">25–40 分</div><div class="rc-dishes">Beef Noodle · Mala Pot</div></div>
+  <div class="rc"><div class="rc-top"><span class="rc-name"><a href="https://maps.google.com/?q=Asian+Spice+Tucson+AZ" target="_blank" rel="noopener">Asian Spice / Chef Wang</a></span><span class="rc-type rt-cn">陸/台</span></div><div class="rc-dist">20–35 分</div><div class="rc-dishes">Ho Fun · Dumplings</div></div>
+  <div class="rc"><div class="rc-top"><span class="rc-name"><a href="https://maps.google.com/?q=PF+Changs+Tucson+AZ" target="_blank" rel="noopener">P.F. Chang's</a></span><span class="rc-type rt-pa">泛亞</span></div><div class="rc-dist">20–30 分</div><div class="rc-dishes">Mongolian Beef · Wraps</div></div>
+  <div class="rc"><div class="rc-top"><span class="rc-name"><a href="https://maps.google.com/?q=Tuk+Tuk+Thai+Tucson+AZ" target="_blank" rel="noopener">Tuk Tuk Thai</a></span><span class="rc-type rt-th">泰</span></div><div class="rc-dist">30–40 分</div><div class="rc-dishes">Pad See Ew · Curry</div></div>
+  <div class="rc"><div class="rc-top"><span class="rc-name"><a href="https://maps.google.com/?q=Miss+Saigon+Tucson+AZ" target="_blank" rel="noopener">Miss Saigon</a></span><span class="rc-type rt-vn">越</span></div><div class="rc-dist">25–40 分</div><div class="rc-dishes">Banh Mi · Summer Rolls</div></div>
+  <div class="rc"><div class="rc-top"><span class="rc-name"><a href="https://maps.google.com/?q=Jun+Dynasty+Tucson+AZ" target="_blank" rel="noopener">Jun Dynasty</a></span><span class="rc-type rt-cn">陸/台</span></div><div class="rc-dist">短程</div><div class="rc-dishes">熱炒 · Dumplings</div></div>
+  <div class="rc"><div class="rc-top"><span class="rc-name"><a href="https://maps.google.com/?q=2040+W+Orange+Grove+Rd+Tucson+AZ+85704" target="_blank" rel="noopener">Ikkyu（備案）</a></span><span class="rc-type rt-jp">日</span></div><div class="rc-dist">短程</div><div class="rc-dishes">Sushi · Teriyaki</div></div>
 </div>
 <div class="boba">
   <div class="boba-icon">🧋</div>
-  <div class="boba-info"><h3>手搖飲：Ding Tea 或 TiTi Boba Corner</h3><p>外帶 · CSR 卡 · 行程空檔享用</p></div>
+  <div class="boba-info"><h3>手搖飲：<a href="https://maps.google.com/?q=Ding+Tea+Tucson+AZ" target="_blank" rel="noopener" style="color:#2C2C2A;text-decoration:none">Ding Tea</a> 或 <a href="https://maps.google.com/?q=TiTi+Boba+Corner+Tucson+AZ" target="_blank" rel="noopener" style="color:#2C2C2A;text-decoration:none">TiTi Boba Corner</a></h3><p>外帶 · CSR 卡 · 行程空檔享用</p></div>
 </div>
 
 <hr>
