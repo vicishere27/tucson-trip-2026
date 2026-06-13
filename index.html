@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Tucson 2026">
+<meta name="theme-color" content="#C45B1A">
+<title>Tucson 家庭避暑 6/13–6/15</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{font-size:16px;-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue','Noto Sans TC',sans-serif;background:#FAF4EB;color:#2C2C2A;line-height:1.65}
+
+/* HERO */
+.hero{background:linear-gradient(155deg,#7B3012 0%,#C45B1A 50%,#E67E22 100%);padding:52px 20px 44px;text-align:center;position:relative}
+.hero-badge{display:inline-block;background:rgba(255,255,255,0.18);color:#FDE9C0;font-size:13px;font-weight:500;padding:5px 14px;border-radius:20px;margin-bottom:14px;border:1px solid rgba(255,255,255,0.25)}
+.hero h1{font-size:28px;font-weight:700;color:#fff;margin-bottom:6px;letter-spacing:-0.3px}
+.hero-sub{font-size:14px;color:#FDDCB0;margin-bottom:18px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.htag{background:rgba(255,255,255,0.15);color:#FEF0D8;font-size:12px;padding:4px 11px;border-radius:14px;border:1px solid rgba(255,255,255,0.25)}
+
+/* LAYOUT */
+.wrap{max-width:680px;margin:0 auto;padding:0 16px}
+
+/* OVERVIEW GRID */
+.ov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:20px 0 4px}
+.ov-card{background:#fff;border:1px solid #EDD9BC;border-radius:12px;padding:13px 10px;text-align:center}
+.ov-icon{font-size:22px;margin-bottom:4px}
+.ov-label{font-size:10px;color:#B4B2A9;text-transform:uppercase;letter-spacing:0.4px;margin-bottom:3px}
+.ov-val{font-size:12px;font-weight:500;color:#2C2C2A;line-height:1.35}
+
+/* SECTION TITLE */
+.sec{font-size:17px;font-weight:700;color:#2C2C2A;padding:22px 0 12px;display:flex;align-items:center;gap:7px}
+
+/* BUDGET CARDS */
+.bgt-row{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-bottom:4px}
+.bgt-card{background:#fff;border:1px solid #EDD9BC;border-radius:11px;padding:12px 13px}
+.bgt-label{font-size:11px;color:#B4B2A9;text-transform:uppercase;letter-spacing:0.4px;margin-bottom:3px}
+.bgt-val{font-size:17px;font-weight:700;color:#C45B1A}
+.bgt-note{font-size:11px;color:#B4B2A9;margin-top:1px}
+
+/* DAY TABS */
+.day-nav{display:flex;gap:7px;padding:4px 0 16px;overflow-x:auto;scrollbar-width:none}
+.day-nav::-webkit-scrollbar{display:none}
+.day-btn{flex-shrink:0;min-height:44px;padding:0 20px;border-radius:22px;border:1.5px solid #DCC9A8;background:#fff;color:#888780;font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;transition:background 0.15s,color 0.15s,border-color 0.15s;display:flex;align-items:center}
+.day-btn.active{background:#C45B1A;border-color:#C45B1A;color:#fff}
+
+/* DAY PANEL */
+.day-panel{display:none}
+.day-panel.active{display:block}
+.day-header{background:#fff;border:1px solid #EDD9BC;border-radius:12px;padding:14px 16px;margin-bottom:18px;display:flex;align-items:flex-start;gap:12px}
+.day-date-box{background:#C45B1A;color:#fff;border-radius:10px;padding:7px 12px;text-align:center;flex-shrink:0;min-width:58px}
+.day-date-num{font-size:22px;font-weight:700;line-height:1.1}
+.day-date-lbl{font-size:10px;opacity:0.85;margin-top:1px}
+.day-info h2{font-size:15px;font-weight:700;color:#2C2C2A;margin-bottom:3px;line-height:1.35}
+.day-info p{font-size:12px;color:#B4B2A9;line-height:1.5}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:11px;top:8px;bottom:8px;width:2px;background:#EDD9BC;border-radius:1px}
+.tl-item{position:relative;margin-bottom:14px}
+.tl-dot{position:absolute;left:-27px;top:13px;width:14px;height:14px;border-radius:50%;border:2.5px solid #FAF4EB;z-index:1}
+.dot-a{background:#C45B1A}.dot-w{background:#1D9E75}.dot-m{background:#D85A30}.dot-t{background:#888780}.dot-r{background:#378ADD}
+.tl-card{background:#fff;border:1px solid #EDD9BC;border-radius:12px;padding:12px 14px}
+.tl-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:5px;flex-wrap:wrap;gap:4px}
+.tl-time{font-size:11px;color:#B4B2A9;font-weight:500}
+.bds{display:flex;gap:4px;flex-wrap:wrap}
+.bd{font-size:11px;padding:2px 8px;border-radius:9px;font-weight:500;white-space:nowrap}
+.bd-w{background:#E1F5EE;color:#0F6E56}.bd-m{background:#FAECE7;color:#993C1D}.bd-t{background:#F1EFE8;color:#5F5E5A}.bd-r{background:#E6F1FB;color:#185FA5}.bd-a{background:#FAEEDA;color:#854F0B}.bd-f{background:#EAF3DE;color:#3B6D11}
+.tl-name{font-size:14px;font-weight:500;color:#2C2C2A;margin-bottom:4px}
+.tl-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:5px}
+.tl-loc{font-size:12px;color:#B4B2A9}
+.tl-cost{font-size:12px;font-weight:500;color:#BA7517}
+.tl-note{background:#FBF5EC;border-radius:8px;padding:8px 10px;font-size:12px;color:#5F5E5A;line-height:1.7;border-left:3px solid #EDD9BC}
+.hl{color:#C45B1A;font-weight:500}
+.gear-row{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px}
+.gtag{font-size:11px;background:#FDF0E0;color:#C45B1A;padding:2px 8px;border-radius:7px;border:1px solid rgba(196,91,26,0.2)}
+
+/* RESTAURANT GRID */
+.rest-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:9px}
+.rc{background:#fff;border:1px solid #EDD9BC;border-radius:11px;padding:11px 12px}
+.rc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;gap:5px}
+.rc-name{font-size:13px;font-weight:500;color:#2C2C2A;line-height:1.35}
+.rc-type{font-size:10px;padding:2px 6px;border-radius:6px;white-space:nowrap;flex-shrink:0}
+.rt-th{background:#FAEEDA;color:#854F0B}.rt-vn{background:#EAF3DE;color:#3B6D11}.rt-jp{background:#E1F5EE;color:#0F6E56}.rt-tw{background:#FAECE7;color:#993C1D}.rt-cn{background:#EEEDFE;color:#3C3489}.rt-pa{background:#F1EFE8;color:#5F5E5A}
+.rc-dist{font-size:11px;color:#B4B2A9;margin-bottom:3px}
+.rc-dishes{font-size:11px;color:#C45B1A;line-height:1.6}
+
+/* PACKING */
+.pack-progress{background:#EDD9BC;border-radius:6px;overflow:hidden;height:6px;margin-bottom:5px}
+.pack-bar{height:100%;background:linear-gradient(90deg,#C45B1A,#F5A623);border-radius:6px;transition:width 0.3s}
+.pack-count{font-size:12px;color:#B4B2A9;margin-bottom:14px}
+.pack-cats{display:flex;flex-direction:column;gap:14px}
+.pcat-lbl{font-size:11px;font-weight:600;color:#888780;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:7px}
+.pack-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:6px}
+.pi{display:flex;align-items:center;gap:8px;min-height:44px;padding:8px 10px;background:#fff;border:1px solid #EDD9BC;border-radius:9px;cursor:pointer;user-select:none;transition:background 0.12s}
+.pi input{width:18px;height:18px;accent-color:#C45B1A;cursor:pointer;flex-shrink:0}
+.pi label{font-size:13px;color:#2C2C2A;cursor:pointer;flex:1;line-height:1.3}
+.pi .star{font-size:10px;color:#D85A30;font-weight:700;flex-shrink:0}
+.pi.done{background:#FDF0E0;border-color:rgba(196,91,26,0.3)}
+.pi.done label{color:#B4B2A9;text-decoration:line-through}
+
+/* NOTES */
+.notes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.nc{background:#FFF9F0;border:1px solid #EDCFA0;border-radius:12px;padding:13px 15px}
+.nc h3{font-size:13px;font-weight:600;color:#C45B1A;margin-bottom:8px;display:flex;align-items:center;gap:5px}
+.nc ul{list-style:none;padding:0}
+.nc ul li{font-size:12px;color:#5F5E5A;padding:3px 0 3px 12px;position:relative;line-height:1.55}
+.nc ul li::before{content:'›';position:absolute;left:0;color:#C45B1A;font-weight:700}
+
+/* BOBA */
+.boba{background:#fff;border:1px solid #EDD9BC;border-radius:12px;padding:13px 15px;display:flex;align-items:center;gap:12px;margin-top:12px}
+.boba-icon{font-size:28px;flex-shrink:0}
+.boba-info h3{font-size:13px;font-weight:500;color:#2C2C2A;margin-bottom:3px}
+.boba-info p{font-size:12px;color:#888780}
+
+/* DIVIDER */
+hr{border:none;border-top:1px solid #EDD9BC;margin:24px 0}
+
+/* FOOTER */
+footer{text-align:center;padding:24px 16px 32px;font-size:11px;color:#B4B2A9;border-top:1px solid #EDD9BC;margin-top:24px}
+footer strong{color:#C45B1A}
+
+/* MOBILE SPECIFIC */
+@media(max-width:480px){
+  .hero{padding:44px 16px 36px}
+  .hero h1{font-size:24px}
+  .ov-grid{grid-template-columns:repeat(3,1fr);gap:8px}
+  .ov-card{padding:10px 7px}
+  .ov-icon{font-size:18px}
+  .ov-label{font-size:9px}
+  .ov-val{font-size:11px}
+  .bgt-row{grid-template-columns:repeat(2,1fr)}
+  .timeline{padding-left:28px}
+  .tl-dot{left:-23px;width:13px;height:13px}
+  .day-header{gap:10px}
+  .day-date-box{min-width:50px;padding:6px 10px}
+  .day-date-num{font-size:20px}
+  .notes-grid{grid-template-columns:1fr}
+  .rest-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">🌵 Arizona 家庭旅遊 2026</div>
+  <h1>Tucson 避暑小旅行</h1>
+  <p class="hero-sub">Omni Tucson National Resort · Jun 13–15, 2026（2 晚）</p>
+  <div class="hero-tags">
+    <span class="htag">🏊 玩水主題</span>
+    <span class="htag">👶 幼兒友善</span>
+    <span class="htag">⚡ Tesla I-10</span>
+    <span class="htag">💳 CSR 積點</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+<div class="ov-grid">
+  <div class="ov-card"><div class="ov-icon">🏨</div><div class="ov-label">住宿</div><div class="ov-val">Omni Tucson</div></div>
+  <div class="ov-card"><div class="ov-icon">👨‍👩‍👧‍👦</div><div class="ov-label">成員</div><div class="ov-val">2 大 2 小</div></div>
+  <div class="ov-card"><div class="ov-icon">🌡️</div><div class="ov-label">天氣</div><div class="ov-val">極端高溫</div></div>
+</div>
+
+<div class="sec">💳 預算明細</div>
+<div class="bgt-row">
+  <div class="bgt-card"><div class="bgt-label">餐飲</div><div class="bgt-val">$350–550</div><div class="bgt-note">Junior Chefs 優惠</div></div>
+  <div class="bgt-card"><div class="bgt-label">門票/玩水</div><div class="bgt-val">$150–300</div><div class="bgt-note">博物館 + Splash Pad</div></div>
+  <div class="bgt-card"><div class="bgt-label">交通/充電</div><div class="bgt-val">$80–120</div><div class="bgt-note">Tesla Supercharger</div></div>
+  <div class="bgt-card"><div class="bgt-label">住宿</div><div class="bgt-val">已付</div><div class="bgt-note">Omni Resort</div></div>
+</div>
+
+<hr>
+
+<div class="sec">📅 每日行程</div>
+<div class="day-nav">
+  <button class="day-btn active" onclick="showDay('d1',this)">🚗 週六 6/13</button>
+  <button class="day-btn" onclick="showDay('d2',this)">🏛️ 週日 6/14</button>
+  <button class="day-btn" onclick="showDay('d3',this)">🏠 週一 6/15</button>
+</div>
+
+<!-- DAY 1 -->
+<div id="d1" class="day-panel active">
+  <div class="day-header">
+    <div class="day-date-box"><div class="day-date-num">13</div><div class="day-date-lbl">SAT</div></div>
+    <div class="day-info"><h2>出發 → Check-in → 泳池 → 晚餐</h2><p>下午 1 點從 85085 出發 · 度假村泳池 · Desert Farmer</p></div>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot dot-t"></div>
+      <div class="tl-card">
+        <div class="tl-top"><span class="tl-time">13:00–15:00</span><div class="bds"><span class="bd bd-t">自駕 I-10</span></div></div>
+        <div class="tl-name">🚗 出發前往 Tucson</div>
+        <div class="tl-meta"><span class="tl-loc">📍 Phoenix 85085 → Omni</span><span class="tl-cost">充電 $30–50</span></div>
+        <div class="tl-note">沿 I-10 提前規劃 Supercharger；幼兒車內小睡。<span class="hl">保冰箱</span>備飲料零食，<span class="hl">煮水壺</span>備奶粉。</div>
+        <div class="gear-row"><span class="gtag">🧊 保冰箱</span><span class="gtag">🍼 煮水壺</span></div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot dot-r"></div>
+      <div class="tl-card">
+        <div class="tl-top"><span class="tl-time">15:00–16:30</span><div class="bds"><span class="bd bd-r">午睡</span><span class="bd bd-f">已付</span></div></div>
+        <div class="tl-name">🏨 Check-in ＋ 午睡 1 小時</div>
+        <div class="tl-meta"><span class="tl-loc">📍 Omni Tucson National Resort</span></div>
+        <div class="tl-note">抵達後安排幼兒午睡，度假村冷氣空間恢復精神。</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot dot-w"></div>
+      <div class="tl-card">
+        <div class="tl-top"><span class="tl-time">16:30–18:00</span><div class="bds"><span class="bd bd-w">玩水</span><span class="bd bd-f">免費</span></div></div>
+        <div class="tl-name">🏊 度假村泳池</div>
+        <div class="tl-meta"><span class="tl-loc">📍 Omni 泳池，步行可達</span></div>
+        <div class="tl-note">午睡後避開正午高溫。幼兒穿 <span class="hl">swim diaper</span>，<span class="hl">背巾</span>方便移動，<span class="hl">腳架</span>拍照。</div>
+        <div class="gear-row"><span class="gtag">🎒 背巾</span><span class="gtag">📸 腳架</span><span class="gtag">🩱 泳衣</span><span class="gtag">🧴 防曬</span></div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot dot-m"></div>
+      <div class="tl-card">
+        <div class="tl-top"><span class="tl-time">17:30–19:30</span><div class="bds"><span class="bd bd-m">晚餐</span><span class="bd bd-a">Junior Chefs</span></div></div>
+        <div class="tl-name">🍽️ Desert Farmer（度假村內）</div>
+        <div class="tl-meta"><span class="tl-loc">📍 步行可達</span><span class="tl-cost">$150–250 · CSR 卡</span></div>
+        <div class="tl-note">Junior Chefs 兒童餐優惠，19:30 前結束配合幼兒作息。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DAY 2 -->
+<div id="d2" class="day-panel">
+  <div class="day-header">
+    <div class="day-date-box"><div class="day-date-num">14</div><div class="day-date-lbl">SUN</div></div>
+    <div class="day-info"><h2>博物館 → 午餐 → 午睡 → Splash Pad → 晚餐</h2><p>室內冷氣 + 午睡 + 下午玩水 · 避開正午曝曬</p></div>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot dot-a"></div>
+      <div class="tl-card">
+        <div class="tl-top"><span class="tl-time">09:00–11:30</span><div class="bds"><span class="bd bd-a">室內冷氣</span></div></div>
+        <div class="tl-name">🏛️ Children's Museum Tucson</div>
+        <div class="tl-meta"><span class="tl-loc">📍 自駕約 35 分</span><span class="tl-cost">$40–60</span></div>
+        <div class="tl-note">全室內冷氣互動設施，<span class="hl">背巾</span>方便移動。建議開門即到。</div>
+        <div class="gear-row"><span class="gtag">🎒 背巾</span></div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot dot-m"></div>
+      <div class="tl-card">
+        <div class="tl-top"><span class="tl-time">12:00–13:30</span><div class="bds"><span class="bd bd-m">午餐</span></div></div>
+        <div class="tl-name">🍜 Noodleholics（台灣/中式）</div>
+        <div class="tl-meta"><span class="tl-cost">$80–120 · CSR 卡</span></div>
+        <div class="tl-note">上菜快速。餐後返回度假村午睡。</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot dot-r"></div>
+      <div class="tl-card">
+        <div class="tl-top"><span class="tl-time">13:30–15:00</span><div class="bds"><span class="bd bd-r">午睡</span></div></div>
+        <div class="tl-name">😴 返回度假村午睡 1–1.5 小時</div>
+        <div class="tl-note">同步避開下午最熱時段（12–15 點），幼兒充分休息再出發。</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot dot-w"></div>
+      <div class="tl-card">
+        <div class="tl-top"><span class="tl-time">15:00–17:00</span><div class="bds"><span class="bd bd-w">玩水</span><span class="bd bd-a">備案室內</span></div></div>
+        <div class="tl-name">💦 Catalina Park Splash Pad</div>
+        <div class="tl-meta"><span class="tl-loc">📍 自駕 20–35 分</span><span class="tl-cost">免費</span></div>
+        <div class="tl-note">地面噴水適合幼兒，有陰涼區。⚠️ 出發前確認開放時間。<br>備案：Pima Air &amp; Space Museum 室內。</div>
+        <div class="gear-row"><span class="gtag">🎒 背巾</span><span class="gtag">📸 腳架</span><span class="gtag">🧊 保冰箱</span><span class="gtag">🩱 泳衣</span></div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot dot-m"></div>
+      <div class="tl-card">
+        <div class="tl-top"><span class="tl-time">17:30–19:30</span><div class="bds"><span class="bd bd-m">晚餐</span></div></div>
+        <div class="tl-name">🍣 Ikkyu（日式）</div>
+        <div class="tl-meta"><span class="tl-cost">$120–180 · CSR 卡</span></div>
+        <div class="tl-note">點餐快速，推薦 Sushi Rolls / Teriyaki。19:30 前結束。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DAY 3 -->
+<div id="d3" class="day-panel">
+  <div class="day-header">
+    <div class="day-date-box"><div class="day-date-num">15</div><div class="day-date-lbl">MON</div></div>
+    <div class="day-info"><h2>早餐 + 泳池 → Check-out → 午餐 → 返回</h2><p>Check-out 11 AM · 目標 16:00 到家</p></div>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot dot-w"></div>
+      <div class="tl-card">
+        <div class="tl-top"><span class="tl-time">09:00–10:30</span><div class="bds"><span class="bd bd-m">早餐</span><span class="bd bd-w">玩水</span><span class="bd bd-a">Junior Chefs</span></div></div>
+        <div class="tl-name">☀️ Junior Chefs 早餐 ＋ 泳池</div>
+        <div class="tl-meta"><span class="tl-loc">📍 Omni 內</span><span class="tl-cost">$50–80</span></div>
+        <div class="tl-note">早餐後最後一次泳池，<span class="hl">Check-out 11:00 AM</span> 注意時間。</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot dot-t"></div>
+      <div class="tl-card">
+        <div class="tl-top"><span class="tl-time">11:00</span><div class="bds"><span class="bd bd-t">Check-out</span></div></div>
+        <div class="tl-name">🧳 退房</div>
+        <div class="tl-note">⏰ <span class="hl">最晚 11:00 AM</span>，行李提前整理好。</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot dot-m"></div>
+      <div class="tl-card">
+        <div class="tl-top"><span class="tl-time">11:00–12:30</span><div class="bds"><span class="bd bd-m">午餐</span></div></div>
+        <div class="tl-name">🍛 Kin Dee Thai 或 Ha Long Bay</div>
+        <div class="tl-meta"><span class="tl-cost">$80–120 · CSR 卡</span></div>
+        <div class="tl-note">泰式或越式，家庭友善。餐後車上幼兒小睡。</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot dot-t"></div>
+      <div class="tl-card">
+        <div class="tl-top"><span class="tl-time">13:00–16:00</span><div class="bds"><span class="bd bd-t">返程</span></div></div>
+        <div class="tl-name">🚗 返回 Phoenix 85085</div>
+        <div class="tl-meta"><span class="tl-loc">📍 I-10，約 1.5–2 hrs</span><span class="tl-cost">充電 $30–50</span></div>
+        <div class="tl-note">目標 <span class="hl">16:00 前到家</span>。保冰箱/煮水壺車上備用。</div>
+        <div class="gear-row"><span class="gtag">🧊 保冰箱</span><span class="gtag">🍼 煮水壺</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="sec">🍽️ 備案餐廳</div>
+<p style="font-size:12px;color:#B4B2A9;margin-bottom:12px">距 Omni 20–40 分，使用 CSR 卡</p>
+<div class="rest-grid">
+  <div class="rc"><div class="rc-top"><span class="rc-name">Kin Dee Thai</span><span class="rc-type rt-th">泰</span></div><div class="rc-dist">25–35 分</div><div class="rc-dishes">Pad Thai · Green Curry · Tom Yum</div></div>
+  <div class="rc"><div class="rc-top"><span class="rc-name">Ha Long Bay</span><span class="rc-type rt-vn">越</span></div><div class="rc-dist">30–40 分</div><div class="rc-dishes">Pho · Spring Rolls · Vermicelli</div></div>
+  <div class="rc"><div class="rc-top"><span class="rc-name">Raijin Ramen</span><span class="rc-type rt-jp">日</span></div><div class="rc-dist">30 分</div><div class="rc-dishes">Tonkotsu · Miso · Gyoza</div></div>
+  <div class="rc"><div class="rc-top"><span class="rc-name">eHotPot / Tasty Pot</span><span class="rc-type rt-tw">台</span></div><div class="rc-dist">25–40 分</div><div class="rc-dishes">Beef Noodle · Mala Pot</div></div>
+  <div class="rc"><div class="rc-top"><span class="rc-name">Asian Spice / Chef Wang</span><span class="rc-type rt-cn">陸/台</span></div><div class="rc-dist">20–35 分</div><div class="rc-dishes">Ho Fun · Dumplings</div></div>
+  <div class="rc"><div class="rc-top"><span class="rc-name">P.F. Chang's</span><span class="rc-type rt-pa">泛亞</span></div><div class="rc-dist">20–30 分</div><div class="rc-dishes">Mongolian Beef · Wraps</div></div>
+  <div class="rc"><div class="rc-top"><span class="rc-name">Tuk Tuk Thai</span><span class="rc-type rt-th">泰</span></div><div class="rc-dist">30–40 分</div><div class="rc-dishes">Pad See Ew · Curry</div></div>
+  <div class="rc"><div class="rc-top"><span class="rc-name">Miss Saigon</span><span class="rc-type rt-vn">越</span></div><div class="rc-dist">25–40 分</div><div class="rc-dishes">Banh Mi · Summer Rolls</div></div>
+  <div class="rc"><div class="rc-top"><span class="rc-name">Jun Dynasty</span><span class="rc-type rt-cn">陸/台</span></div><div class="rc-dist">短程</div><div class="rc-dishes">熱炒 · Dumplings</div></div>
+  <div class="rc"><div class="rc-top"><span class="rc-name">Ikkyu（備案）</span><span class="rc-type rt-jp">日</span></div><div class="rc-dist">短程</div><div class="rc-dishes">Sushi · Teriyaki</div></div>
+</div>
+<div class="boba">
+  <div class="boba-icon">🧋</div>
+  <div class="boba-info"><h3>手搖飲：Ding Tea 或 TiTi Boba Corner</h3><p>外帶 · CSR 卡 · 行程空檔享用</p></div>
+</div>
+
+<hr>
+
+<div class="sec">🎒 打包清單</div>
+<div class="pack-progress"><div class="pack-bar" id="pBar" style="width:0%"></div></div>
+<p class="pack-count" id="pCount">點擊打勾已打包項目</p>
+<div class="pack-cats">
+  <div>
+    <div class="pcat-lbl">⭐ 核心裝備</div>
+    <div class="pack-items">
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>背巾</label><span class="star">必</span></div>
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>腳架</label><span class="star">必</span></div>
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>保冰箱</label><span class="star">必</span></div>
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>煮水壺</label><span class="star">必</span></div>
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>CSR 信用卡</label><span class="star">必</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="pcat-lbl">🏊 玩水裝備</div>
+    <div class="pack-items">
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>大人泳衣 ×2</label></div>
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>小孩泳衣 ×2</label></div>
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>Swim Diaper</label></div>
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>防曬乳</label></div>
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>遮陽帽</label></div>
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>快乾毛巾 ×4</label></div>
+    </div>
+  </div>
+  <div>
+    <div class="pcat-lbl">👶 幼兒必備</div>
+    <div class="pack-items">
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>尿布（充足）</label></div>
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>濕紙巾</label></div>
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>奶粉 / 奶瓶</label></div>
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>副食品/零食</label></div>
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>常用藥品</label></div>
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>玩具</label></div>
+    </div>
+  </div>
+  <div>
+    <div class="pcat-lbl">📱 科技/出行</div>
+    <div class="pack-items">
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>Tesla 充電規劃</label></div>
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>手機充電器</label></div>
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>行動電源</label></div>
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>電解質補充包</label></div>
+      <div class="pi" onclick="tp(this)"><input type="checkbox"><label>輕便冷氣服</label></div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="sec">⚠️ 重要提醒</div>
+<div class="notes-grid">
+  <div class="nc"><h3>🌡️ 高溫安全</h3><ul><li>日間可達 105°F+，正午嚴格室內</li><li>戶外限早晨 9 前或傍晚 17 後</li><li>每 15–20 分鐘補水，保冰箱備冷飲</li><li>停車後勿讓幼兒留在車內</li></ul></div>
+  <div class="nc"><h3>🏊 玩水安全</h3><ul><li>幼兒必穿 Swim Diaper（泳池規定）</li><li>成人全程陪伴，視線不離幼兒</li><li>Splash Pad 提前確認開放時間</li><li>下水前塗防曬，30 分鐘後補塗</li></ul></div>
+  <div class="nc"><h3>⏰ 時間節點</h3><ul><li>Check-out：最晚 11:00 AM</li><li>晚餐每天 19:30 前結束</li><li>回程目標 16:00 前到家</li><li>幼兒作息為最高優先</li></ul></div>
+  <div class="nc"><h3>💳 積點策略</h3><ul><li>所有餐廳刷太太 CSR（3X 積點）</li><li>Junior Chefs 優惠降低成本</li><li>Splash Pad 免費，省下門票</li><li>Tesla 充電用車上帳戶</li></ul></div>
+</div>
+
+</div>
+
+<footer><strong>Tucson 家庭避暑 2026</strong> · Jun 13–15 · Omni Tucson National Resort<br>2 大 2 小 · Tesla I-10 · 安全玩水優先</footer>
+
+<script>
+function showDay(id,btn){
+  document.querySelectorAll('.day-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.day-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+function tp(el){
+  var cb=el.querySelector('input[type=checkbox]');
+  if(!cb)return;
+  cb.checked=!cb.checked;
+  el.classList.toggle('done',cb.checked);
+  up();
+}
+function up(){
+  var all=document.querySelectorAll('.pi input[type=checkbox]');
+  var done=document.querySelectorAll('.pi input[type=checkbox]:checked');
+  var pct=all.length?Math.round(done.length/all.length*100):0;
+  document.getElementById('pBar').style.width=pct+'%';
+  document.getElementById('pCount').textContent=done.length+' / '+all.length+' 項目已打包（'+pct+'%）';
+}
+up();
+</script>
+</body>
+</html>
