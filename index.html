@@ -34,6 +34,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue','Noto Sans TC
 /* SECTION TITLE */
 .sec{font-size:17px;font-weight:700;color:#2C2C2A;padding:22px 0 12px;display:flex;align-items:center;gap:7px}
 
+/* THE EDIT CARD */
+.edit-card{background:#fff;border:2px solid #C45B1A;border-radius:14px;padding:16px;margin-bottom:4px}
+.edit-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.edit-logo{background:#C45B1A;color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:7px;letter-spacing:0.5px;flex-shrink:0}
+.edit-title{font-size:14px;font-weight:700;color:#2C2C2A}
+.edit-sub{font-size:11px;color:#888780;margin-top:1px}
+.edit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
+.edit-benefit{background:#FBF5EC;border-radius:10px;padding:10px 11px;border:1px solid #EDD9BC}
+.edit-benefit-icon{font-size:18px;margin-bottom:4px}
+.edit-benefit-name{font-size:12px;font-weight:600;color:#2C2C2A;margin-bottom:2px}
+.edit-benefit-desc{font-size:11px;color:#888780;line-height:1.5}
+.edit-benefit.star{border-color:rgba(196,91,26,0.4);background:#FDF0E0}
+.edit-benefit.star .edit-benefit-name{color:#C45B1A}
+.edit-saving{margin-top:11px;background:#EAF3DE;border-radius:9px;padding:8px 11px;font-size:12px;color:#3B6D11;line-height:1.6;border-left:3px solid #639922}
+.edit-saving strong{font-weight:600}
+
 /* BUDGET CARDS */
 .bgt-row{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-bottom:4px}
 .bgt-card{background:#fff;border:1px solid #EDD9BC;border-radius:11px;padding:12px 13px}
@@ -165,12 +181,55 @@ footer strong{color:#C45B1A}
   <div class="ov-card"><div class="ov-icon">🌡️</div><div class="ov-label">天氣</div><div class="ov-val">極端高溫</div></div>
 </div>
 
+<div class="sec">✨ CSR The Edit 住宿福利</div>
+<div class="edit-card">
+  <div class="edit-header">
+    <span class="edit-logo">THE EDIT</span>
+    <div><div class="edit-title">Chase Sapphire Reserve · The Edit 專屬福利</div><div class="edit-sub">透過 Chase Travel 訂房自動附帶，無需另行申請</div></div>
+  </div>
+  <div class="edit-grid">
+    <div class="edit-benefit star">
+      <div class="edit-benefit-icon">🍳</div>
+      <div class="edit-benefit-name">每日早餐 for 2</div>
+      <div class="edit-benefit-desc">2 大人早餐全免（坐式或自助，視飯店決定）</div>
+    </div>
+    <div class="edit-benefit star">
+      <div class="edit-benefit-icon">💰</div>
+      <div class="edit-benefit-name">$100 度假村消費額度</div>
+      <div class="edit-benefit-desc">整趟旅程 1 次，可用於餐廳、Spa、活動，確認飯店可用範圍</div>
+    </div>
+    <div class="edit-benefit">
+      <div class="edit-benefit-icon">⬆️</div>
+      <div class="edit-benefit-name">免費房型升級</div>
+      <div class="edit-benefit-desc">視空房況，早點 check-in 升級機率較高</div>
+    </div>
+    <div class="edit-benefit">
+      <div class="edit-benefit-icon">🕐</div>
+      <div class="edit-benefit-name">早入住 / 晚退房</div>
+      <div class="edit-benefit-desc">視空房況，可向前台申請 late checkout（爭取到 1 PM）</div>
+    </div>
+    <div class="edit-benefit">
+      <div class="edit-benefit-icon">🎁</div>
+      <div class="edit-benefit-name">Welcome Amenity</div>
+      <div class="edit-benefit-desc">到達時的歡迎小禮（本地特色零食或小物）</div>
+    </div>
+    <div class="edit-benefit">
+      <div class="edit-benefit-icon">📶</div>
+      <div class="edit-benefit-name">免費 Wi-Fi</div>
+      <div class="edit-benefit-desc">全房免費，適用有提供 Wi-Fi 的飯店</div>
+    </div>
+  </div>
+  <div class="edit-saving">
+    <strong>💡 省錢試算：</strong>早餐 2 大人 × 2 天 ≈ 省 $80–120 · $100 飯店額度可折抵 Desert Farmer 晚餐 · 合計最多省 <strong>$180–220</strong>，直接抵掉大半晚餐費用
+  </div>
+</div>
+
 <div class="sec">💳 預算明細</div>
 <div class="bgt-row">
-  <div class="bgt-card"><div class="bgt-label">餐飲</div><div class="bgt-val">$350–550</div><div class="bgt-note">Junior Chefs 優惠</div></div>
+  <div class="bgt-card"><div class="bgt-label">餐飲（扣除福利）</div><div class="bgt-val">$230–430</div><div class="bgt-note">The Edit 早餐 + $100 額度折抵</div></div>
   <div class="bgt-card"><div class="bgt-label">門票/玩水</div><div class="bgt-val">$150–300</div><div class="bgt-note">博物館 + Splash Pad</div></div>
   <div class="bgt-card"><div class="bgt-label">交通/充電</div><div class="bgt-val">$80–120</div><div class="bgt-note">Tesla Supercharger</div></div>
-  <div class="bgt-card"><div class="bgt-label">住宿</div><div class="bgt-val">已付</div><div class="bgt-note">Omni Resort</div></div>
+  <div class="bgt-card"><div class="bgt-label">住宿</div><div class="bgt-val">已付</div><div class="bgt-note">+ The Edit 福利自動附帶</div></div>
 </div>
 
 <hr>
@@ -223,8 +282,8 @@ footer strong{color:#C45B1A}
       <div class="tl-card">
         <div class="tl-top"><span class="tl-time">17:30–19:30</span><div class="bds"><span class="bd bd-m">晚餐</span><span class="bd bd-a">Junior Chefs</span></div></div>
         <div class="tl-name">🍽️ Desert Farmer（度假村內）</div>
-        <div class="tl-meta"><span class="tl-loc">📍 步行可達</span><span class="tl-cost">$150–250 · CSR 卡</span></div>
-        <div class="tl-note">Junior Chefs 兒童餐優惠，19:30 前結束配合幼兒作息。</div>
+        <div class="tl-meta"><span class="tl-loc">📍 步行可達</span><span class="tl-cost">$150–250 → 折抵後約 $50–150 · CSR 卡</span></div>
+        <div class="tl-note">Junior Chefs 兒童餐優惠，19:30 前結束配合幼兒作息。<br>💰 <span class="hl">The Edit $100 度假村額度</span>可用於此餐，建議在這餐使用，直接折抵帳單，確認時告知是 The Edit 訂房。</div>
       </div>
     </div>
   </div>
@@ -237,6 +296,15 @@ footer strong{color:#C45B1A}
     <div class="day-info"><h2>博物館 → 午餐 → 午睡 → Splash Pad → 晚餐</h2><p>室內冷氣 + 午睡 + 下午玩水 · 避開正午曝曬</p></div>
   </div>
   <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot dot-m"></div>
+      <div class="tl-card">
+        <div class="tl-top"><span class="tl-time">08:00–08:45</span><div class="bds"><span class="bd bd-m">早餐</span><span class="bd bd-f">The Edit 免費</span></div></div>
+        <div class="tl-name">🍳 The Edit 每日早餐（2 大人免費）</div>
+        <div class="tl-meta"><span class="tl-loc">📍 Omni 餐廳</span><span class="tl-cost">大人 $0（The Edit）· 小孩 Junior Chefs 優惠</span></div>
+        <div class="tl-note"><span class="hl">The Edit 福利</span>：2 大人早餐全免，坐式或自助視 Omni 安排。出發博物館前先用早餐，確保幼兒飽足。</div>
+      </div>
+    </div>
     <div class="tl-item">
       <div class="tl-dot dot-a"></div>
       <div class="tl-card">
@@ -296,10 +364,10 @@ footer strong{color:#C45B1A}
     <div class="tl-item">
       <div class="tl-dot dot-w"></div>
       <div class="tl-card">
-        <div class="tl-top"><span class="tl-time">09:00–10:30</span><div class="bds"><span class="bd bd-m">早餐</span><span class="bd bd-w">玩水</span><span class="bd bd-a">Junior Chefs</span></div></div>
-        <div class="tl-name">☀️ Junior Chefs 早餐 ＋ 泳池</div>
-        <div class="tl-meta"><span class="tl-loc">📍 Omni 內</span><span class="tl-cost">$50–80</span></div>
-        <div class="tl-note">早餐後最後一次泳池，<span class="hl">Check-out 11:00 AM</span> 注意時間。</div>
+        <div class="tl-top"><span class="tl-time">09:00–10:30</span><div class="bds"><span class="bd bd-m">早餐</span><span class="bd bd-w">玩水</span><span class="bd bd-f">The Edit 免費</span></div></div>
+        <div class="tl-name">☀️ The Edit 早餐 ＋ 泳池最後衝刺</div>
+        <div class="tl-meta"><span class="tl-loc">📍 Omni 內</span><span class="tl-cost">大人 $0（The Edit）· 小孩 Junior Chefs 約 $20–30</span></div>
+        <div class="tl-note"><span class="hl">The Edit 福利</span>：第二天早餐 2 大人再度全免。早餐後最後一次泳池。<br>💡 <span class="hl">申請 Late Checkout</span>：The Edit 住客可向前台申請延遲退房（爭取到中午 12–1 PM），讓早上更從容。</div>
       </div>
     </div>
     <div class="tl-item">
@@ -307,7 +375,7 @@ footer strong{color:#C45B1A}
       <div class="tl-card">
         <div class="tl-top"><span class="tl-time">11:00</span><div class="bds"><span class="bd bd-t">Check-out</span></div></div>
         <div class="tl-name">🧳 退房</div>
-        <div class="tl-note">⏰ <span class="hl">最晚 11:00 AM</span>，行李提前整理好。</div>
+        <div class="tl-note">⏰ 標準 <span class="hl">11:00 AM</span>，但 The Edit 住客可申請 late checkout 至 12–1 PM（視空房況）。行李提前整理，check-out 前先向前台確認。</div>
       </div>
     </div>
     <div class="tl-item">
@@ -410,7 +478,7 @@ footer strong{color:#C45B1A}
   <div class="nc"><h3>🌡️ 高溫安全</h3><ul><li>日間可達 105°F+，正午嚴格室內</li><li>戶外限早晨 9 前或傍晚 17 後</li><li>每 15–20 分鐘補水，保冰箱備冷飲</li><li>停車後勿讓幼兒留在車內</li></ul></div>
   <div class="nc"><h3>🏊 玩水安全</h3><ul><li>幼兒必穿 Swim Diaper（泳池規定）</li><li>成人全程陪伴，視線不離幼兒</li><li>Splash Pad 提前確認開放時間</li><li>下水前塗防曬，30 分鐘後補塗</li></ul></div>
   <div class="nc"><h3>⏰ 時間節點</h3><ul><li>Check-out：最晚 11:00 AM</li><li>晚餐每天 19:30 前結束</li><li>回程目標 16:00 前到家</li><li>幼兒作息為最高優先</li></ul></div>
-  <div class="nc"><h3>💳 積點策略</h3><ul><li>所有餐廳刷太太 CSR（3X 積點）</li><li>Junior Chefs 優惠降低成本</li><li>Splash Pad 免費，省下門票</li><li>Tesla 充電用車上帳戶</li></ul></div>
+  <div class="nc"><h3>💳 積點 + The Edit 策略</h3><ul><li>The Edit 早餐 2 大人免費（2 天）</li><li>$100 額度建議用於 Desert Farmer 晚餐</li><li>Check-in 時申請房型升級 + late checkout</li><li>所有餐廳刷太太 CSR（3X 積點）</li><li>Splash Pad 免費，省下門票</li></ul></div>
 </div>
 
 </div>
